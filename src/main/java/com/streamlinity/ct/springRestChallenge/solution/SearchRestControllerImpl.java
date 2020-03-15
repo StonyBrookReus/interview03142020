@@ -38,13 +38,13 @@ public class SearchRestControllerImpl {
 		return searchSvcImpl.getItemList();
 	}
 	
-	@GetMapping("/item?{category}")
+	@GetMapping("/item")
 	@ResponseBody
 	public List<Item> getItemsForCategory(@PathVariable("category") String category) {
 		return searchSvcImpl.getItems(category);
 	}
 	
-	@GetMapping("/item?{itemShortName}")
+	@GetMapping("/item/{itemShortName}")
 	@ResponseBody
 	public List<Item> getItemsForItemShortName(@PathVariable("itemShortName") String itemShortName) {
 		return searchSvcImpl.getItems(itemShortName);
